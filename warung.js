@@ -1,33 +1,60 @@
-# Mobile_JavaScript
-alert ("selamat datang");
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Warung Kopi</title>
+</head>
+<body>
 
-let pilihan = prompt("mau beli 1. kopi hitam atau 2. cappucino?");
+  <script>
+    alert("Selamat datang!");
 
-     pilih = Number(pilihan)
-     if (pilih === 1)
-         {let harga = 5000;
-         alert ("kopi hitam ya tuan, untuk harganya Rp" + harga);
-           let nilai = Number(prompt("tolong bayar sesuai harga"));
-      if (nilai >= harga) {
+    let pilihan = prompt("Mau beli apa?\n1. Kopi Hitam (Rp 5.000)\n2. Cappucino (Rp 8.000)");
+
+    if (pilihan !== null) {
+      let pilih = Number(pilihan);
+
+      if (pilih === 1) {
+        let harga = 5000;
+        alert("Kopi hitam ya tuan, harganya Rp " + harga);
+        
+        let inputBayar = prompt("Tolong bayar sesuai harga:");
+        let nilai = Number(inputBayar);
+
+        if (nilai >= harga) {
           let kembalian = nilai - harga;
-          alert ("terima kasih, pesanan anda akan kami buat.");
-      if (kembalian > 0)
-          {alert("ini kembalian anda Rp" + kembalian); }
-         } else {alert("maaf, uang anda tidak cukup.");} }
- 
-     pilih = Number(pilihan)
-     if (pilih === 2)
-         {let harga = 8000;
-         alert ("cappucino ya tuan, untuk harganya Rp" + harga);
-           let nilai = Number(prompt("tolong bayar sesuai harga"));
-      if (nilai >= harga) {
+          alert("Terima kasih, pesanan anda akan kami buat.");
+          if (kembalian > 0) {
+            alert("Ini kembalian anda Rp " + kembalian);
+          }
+        } else {
+          alert("Maaf, uang anda tidak cukup.");
+        }
+
+      } else if (pilih === 2) {
+        let harga = 8000;
+        alert("Cappucino ya tuan, harganya Rp " + harga);
+        
+        let inputBayar = prompt("Tolong bayar sesuai harga:");
+        let nilai = Number(inputBayar);
+
+        if (nilai >= harga) {
           let kembalian = nilai - harga;
-          alert ("terima kasih, pesanan anda akan kami buat.");
-      if (kembalian > 0)
-          {alert("ini kembalian anda Rp" + kembalian); }
-          
-         } else {alert("maaf, uang anda tidak cukup.");} }
-      
-      if (pilih >= 3) {alert("maaf pesanan anda tidak valid.");}
-         
-  alert ("terima kasih sudah datang.")
+          alert("Terima kasih, pesanan anda akan kami buat.");
+          if (kembalian > 0) {
+            alert("Ini kembalian anda Rp " + kembalian);
+          }
+        } else {
+          alert("Maaf, uang anda tidak cukup.");
+        }
+
+      } else {
+        alert("Maaf, pesanan anda tidak valid.");
+      }
+    }
+
+    alert("Terima kasih sudah datang.");
+  </script>
+
+</body>
+</html>
