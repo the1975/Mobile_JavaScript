@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Warung Kopi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir JS</title>
 </head>
 <body>
 
-  <script>
-    alert("Selamat datang!");
+    <h2>Tugas Praktikum: Program Kasir</h2>
 
-    let pilihan = prompt("Mau beli apa?\n1. Kopi Hitam (Rp 5.000)\n2. Cappucino (Rp 8.000)");
+    <script>
+        // 1-3. Input data menggunakan prompt
+    let nama = prompt("Masukkan nama barang (contoh: sepatu):", "sepatu");
+    let harga = parseInt(prompt("Masukkan Harga barang (contoh: 30000):", "30000"));
+    let qty = parseInt(prompt("Masukkan jumlah beli (qty):", "3"));
 
-    if (pilihan !== null) {
-      let pilih = Number(pilihan);
+    // Proses perhitungan total
+    let total = harga * qty;
+    let diskon = 0;
 
-      if (pilih === 1) {
-        let harga = 5000;
-        alert("Kopi hitam ya tuan, harganya Rp " + harga);
-        
-        let inputBayar = prompt("Tolong bayar sesuai harga:");
-        let nilai = Number(inputBayar);
-
-        if (nilai >= harga) {
-          let kembalian = nilai - harga;
-          alert("Terima kasih, pesanan anda akan kami buat.");
-          if (kembalian > 0) {
-            alert("Ini kembalian anda Rp " + kembalian);
-          }
-        } else {
-          alert("Maaf, uang anda tidak cukup.");
-        }
-
-      } else if (pilih === 2) {
-        let harga = 8000;
-        alert("Cappucino ya tuan, harganya Rp " + harga);
-        
-        let inputBayar = prompt("Tolong bayar sesuai harga:");
-        let nilai = Number(inputBayar);
-
-        if (nilai >= harga) {
-          let kembalian = nilai - harga;
-          alert("Terima kasih, pesanan anda akan kami buat.");
-          if (kembalian > 0) {
-            alert("Ini kembalian anda Rp " + kembalian);
-          }
-        } else {
-          alert("Maaf, uang anda tidak cukup.");
-        }
-
-      } else {
-        alert("Maaf, pesanan anda tidak valid.");
-      }
+    // 4. Jika pembelian lebih dari 50.000 dapat diskon 10%
+    if (total > 50000) {
+        diskon = total * 0.10;
     }
 
-    alert("Terima kasih sudah datang.");
-  </script>
+    let pembayaran = total - diskon;
+
+    // 5. Tampilan Struk belanja menggunakan document.write
+    // Tag <pre> digunakan agar susunan spasi persis seperti di teks
+    document.write("<pre>");
+    document.write("++++++++++++++++++++++++++++++++<br>");
+    document.write("+                              +<br>");
+    document.write("+ nama  Harga  qty  total      +<br>");
+    document.write("+ " + nama + "<br>");
+    document.write("+       " + harga + "  " + qty + "    " + total + "<br>");
+    document.write("+                              +<br>");
+    document.write("+ total belanja     " + total + "<br>");
+    document.write("+ diskon            " + diskon + "<br>");
+    document.write("+ pembayaran        " + pembayaran + "<br>");
+    document.write("+                              +<br>");
+    document.write("++++++++++++++++++++++++++++++++<br>");
+    document.write("</pre>");
+    </script>
 
 </body>
 </html>
